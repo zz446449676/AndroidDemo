@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="false">
+        <layer-list>
+            <item>
+                <shape android:shape="oval">
+                    <solid android:color="#ffffff" />
+                    <stroke android:color="#cccccc" android:width="1dp" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <item android:state_selected="true">
+        <layer-list>
+            <item>
+                <shape android:shape="oval">
+                    <solid android:color="#2182fc" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>
