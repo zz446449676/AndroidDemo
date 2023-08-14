@@ -7,8 +7,11 @@ public class StrategyFactory {
     // 递归遍历对一个有序数组进行查找
     public static final int RECURSION_SEARCH_ORDERED_ARRAY = 0;
 
-    // 选择排序算法对数组进行排序
+    // 用选择排序算法对数组进行排序
     public static final int SELECT_SORT = 1;
+
+    // 用冒泡排序算法对数组进行排序
+    public static final int BUBBLE_SORT = 2;
 
     public static Strategy getStrategy(int strategy) {
         Strategy mStrategy = null;
@@ -19,6 +22,10 @@ public class StrategyFactory {
 
             case SELECT_SORT:
                 mStrategy = new SelectSort();
+                break;
+
+            case BUBBLE_SORT:
+                mStrategy = new BubbleSort();
                 break;
         }
         return mStrategy;
