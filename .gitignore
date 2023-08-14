@@ -1,15 +1,33 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+# Built application 文件
+*.apk
+*.ap_
+
+# Gradle files
+.gradle/
+build/
+
+# 本地配置文件 (sdk path, etc)
 local.properties
+
+# 日志文件
+*.log
+
+# IntelliJ (IDE配置文件)
+*.iml
+.idea/
+
+# 在Android Studio 2.2及更高版本中生成的外部原生构建文件夹
+.externalNativeBuild
+
+.DS_Store
+
+# build.gradle会重新生成的文件
+# **/webapp/rn_*.7z
+# **/webapp/pkgs.json
+# **/webapp/env.config
+**/assets/themeTab.json
+**/assets/newRecommendation*.json
+**/assets/*_entrySetting.json
+
+
+

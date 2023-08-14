@@ -1,6 +1,7 @@
 package com.android.testdemo.function;
 
-import com.android.testdemo.function.strategy.RecursionSearchOrderedArray;
+import com.android.testdemo.function.strategy.Strategy;
+import com.android.testdemo.function.strategy.StrategyFactory;
 
 import org.testng.annotations.Test;
 
@@ -9,7 +10,9 @@ public class Algorithm {
     // 测试算法入口
     @Test
     public void testMain() {
-        // RecursionSearchOrderedArray 递归查找有序数组的值
-        System.out.println("Yikw Result : " + new RecursionSearchOrderedArray().run());
+        Strategy strategy = StrategyFactory.getStrategy(StrategyFactory.SELECT_SORT);
+        if (strategy != null) {
+            strategy.run();
+        }
     }
 }
