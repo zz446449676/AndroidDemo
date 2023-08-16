@@ -10,7 +10,7 @@ public class Algorithm {
     // 测试算法入口
     @Test
     public void testMain() {
-        Strategy strategy = StrategyFactory.getStrategy(StrategyFactory.SELECT_SORT);
+        Strategy strategy = StrategyFactory.getStrategy(StrategyFactory.MERGE_SORT);
         if (strategy != null) {
             strategy.run();
         }

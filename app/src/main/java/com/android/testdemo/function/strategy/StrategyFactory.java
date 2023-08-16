@@ -13,6 +13,15 @@ public class StrategyFactory {
     // 用冒泡排序算法对数组进行排序
     public static final int BUBBLE_SORT = 2;
 
+    // 用直接插入排序算法对数组进行排序
+    public static final int INSERT_SORT = 3;
+
+    // 用快速排序算法对数组进行排序
+    public static final int QUICK_SORT = 4;
+
+    // 用归并排序算法对数组进行排序
+    public static final int MERGE_SORT = 5;
+
     public static Strategy getStrategy(int strategy) {
         Strategy mStrategy = null;
         switch (strategy) {
@@ -26,6 +35,18 @@ public class StrategyFactory {
 
             case BUBBLE_SORT:
                 mStrategy = new BubbleSort();
+                break;
+
+            case INSERT_SORT:
+                mStrategy = new InsertSort();
+                break;
+
+            case QUICK_SORT:
+                mStrategy = new QuickSort();
+                break;
+
+            case MERGE_SORT:
+                mStrategy = new MergeSort();
                 break;
         }
         return mStrategy;
