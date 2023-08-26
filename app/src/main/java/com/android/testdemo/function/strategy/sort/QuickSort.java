@@ -1,4 +1,6 @@
-package com.android.testdemo.function.strategy;
+package com.android.testdemo.function.strategy.sort;
+
+import com.android.testdemo.function.strategy.Strategy;
 
 import java.util.Arrays;
 
@@ -11,7 +13,7 @@ import java.util.Arrays;
  * 以该基准数为中心，将数组划分为左右两个子数组。递归调用继续对左右两个子数组进行相同操作。
  * 平均时间复杂度O(nlog(n))， 最坏情况下是O(n^2)
  */
-public class QuickSort implements Strategy{
+public class QuickSort implements Strategy {
     @Override
     public void run() {
         // 初始化数组

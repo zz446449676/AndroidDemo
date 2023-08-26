@@ -1,5 +1,12 @@
 package com.android.testdemo.function.strategy;
 
+import com.android.testdemo.function.strategy.sort.BubbleSort;
+import com.android.testdemo.function.strategy.sort.InsertSort;
+import com.android.testdemo.function.strategy.sort.MergeSort;
+import com.android.testdemo.function.strategy.sort.QuickSort;
+import com.android.testdemo.function.strategy.sort.SelectSort;
+import com.android.testdemo.function.strategy.string.ReversalString;
+
 /**
  * 算法工厂，动态创建算法实例
  */
@@ -21,6 +28,9 @@ public class StrategyFactory {
 
     // 用归并排序算法对数组进行排序
     public static final int MERGE_SORT = 5;
+
+    // 字符串反转
+    public static final int REVERSAL_STRING = 6;
 
     public static Strategy getStrategy(int strategy) {
         Strategy mStrategy = null;
@@ -47,6 +57,10 @@ public class StrategyFactory {
 
             case MERGE_SORT:
                 mStrategy = new MergeSort();
+                break;
+
+            case REVERSAL_STRING:
+                mStrategy = new ReversalString();
                 break;
         }
         return mStrategy;

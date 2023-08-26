@@ -1,4 +1,6 @@
-package com.android.testdemo.function.strategy;
+package com.android.testdemo.function.strategy.sort;
+
+import com.android.testdemo.function.strategy.Strategy;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,7 +14,7 @@ import java.util.List;
  * 重复以上操作，直到单个子数组只有一个元素为止，然后再两两合并。
  * 归并排序的时间复杂度为 O(nlog(n))
  */
-public class MergeSort implements Strategy{
+public class MergeSort implements Strategy {
     @Override
     public void run() {
         // 初始化数组

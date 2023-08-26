@@ -1,4 +1,6 @@
-package com.android.testdemo.function.strategy;
+package com.android.testdemo.function.strategy.sort;
+
+import com.android.testdemo.function.strategy.Strategy;
 
 import java.util.Arrays;
 
@@ -11,7 +13,7 @@ import java.util.Arrays;
  * 然后缩小范围进行新一轮冒泡，每一轮操作，都会将这一轮中最大的元素放置到数组的末尾。
  * 假如数组的长度是 n，那么当我们重复完 n 轮的时候，整个数组就有序了。最好情况O(n) , 平均和最坏情况都为 O(n^2)
  */
-public class BubbleSort implements Strategy{
+public class BubbleSort implements Strategy {
     // 最好情况的数组
     private final int[] betterArr = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
