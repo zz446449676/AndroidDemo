@@ -5,4 +5,9 @@
     <!-- Strings used for fragments for navigation -->
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+
+    <string name="take_photo">拍照</string>
+    <string name="start_capture">录像</string>
+    <string name="stop_capture">停止</string>
+    <string name="take_photo_tip">请确保证件为有效证件并在明亮的地方进行拍摄，并保证条形码区域拍摄清晰完整</string>
 </resources>

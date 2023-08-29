@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
     <style name="AppTheme"  parent="@style/Theme.AppCompat.NoActionBar">
-        <!-- 添加以下属性 -->
+        <!-- 添加以下属性 透明设置-->
         <item name="android:windowNoTitle">true</item>
         <item name="android:statusBarColor">#00000000</item>
         <!--  <item name="android:windowBackground">@drawable/bg_splash</item>  -->
