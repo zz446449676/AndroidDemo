@@ -22,6 +22,15 @@ public class StrategyFactory {
     // 用归并排序算法对数组进行排序
     public static final int MERGE_SORT = 5;
 
+    // 三数求和问题
+    public static final int THREE_SUM = 7;
+
+    // 移除单链表倒是第N个数
+    public static final int REMOVE_N_TH_FROM_END = 8;
+
+    // 链表反转
+    public static final int LINK_LIST_REVERSE = 9;
+
     public static Strategy getStrategy(int strategy) {
         Strategy mStrategy = null;
         switch (strategy) {
@@ -47,6 +56,18 @@ public class StrategyFactory {
 
             case MERGE_SORT:
                 mStrategy = new MergeSort();
+                break;
+
+            case THREE_SUM:
+                mStrategy = new ThreeSum();
+                break;
+
+            case REMOVE_N_TH_FROM_END:
+                mStrategy = new RemoveNthFromEnd();
+                break;
+
+            case LINK_LIST_REVERSE:
+                mStrategy = new LinkListReverse();
                 break;
         }
         return mStrategy;
