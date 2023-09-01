@@ -1,5 +1,7 @@
 package com.android.testdemo.function.strategy;
 
+import com.android.testdemo.function.threadDemo.ThreadSync;
+
 /**
  * 算法工厂，动态创建算法实例
  */
@@ -30,6 +32,9 @@ public class StrategyFactory {
 
     // 链表反转
     public static final int LINK_LIST_REVERSE = 9;
+
+    // 线程同步，线程使用案例
+    public static final int THREAD_SYNC = 10;
 
     public static Strategy getStrategy(int strategy) {
         Strategy mStrategy = null;
@@ -68,6 +73,10 @@ public class StrategyFactory {
 
             case LINK_LIST_REVERSE:
                 mStrategy = new LinkListReverse();
+                break;
+
+            case THREAD_SYNC:
+                mStrategy = new ThreadSync();
                 break;
         }
         return mStrategy;

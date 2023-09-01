@@ -9,8 +9,8 @@ public class Algorithm {
 
     // 测试算法入口
     @Test
-    public void testMain() {
-        Strategy strategy = StrategyFactory.getStrategy(StrategyFactory.LINK_LIST_REVERSE);
+    public void testMain() throws InterruptedException {
+        Strategy strategy = StrategyFactory.getStrategy(StrategyFactory.THREAD_SYNC);
         if (strategy != null) {
             strategy.run();
         }
