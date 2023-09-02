@@ -1,6 +1,12 @@
 package com.android.testdemo.function.strategy;
 
 import com.android.testdemo.function.threadDemo.ThreadSync;
+import com.android.testdemo.function.strategy.sort.BubbleSort;
+import com.android.testdemo.function.strategy.sort.InsertSort;
+import com.android.testdemo.function.strategy.sort.MergeSort;
+import com.android.testdemo.function.strategy.sort.QuickSort;
+import com.android.testdemo.function.strategy.sort.SelectSort;
+import com.android.testdemo.function.strategy.string.ReversalString;
 
 /**
  * 算法工厂，动态创建算法实例
@@ -35,6 +41,8 @@ public class StrategyFactory {
 
     // 线程同步，线程使用案例
     public static final int THREAD_SYNC = 10;
+    // 字符串反转
+    public static final int REVERSAL_STRING = 6;
 
     public static Strategy getStrategy(int strategy) {
         Strategy mStrategy = null;
@@ -77,6 +85,10 @@ public class StrategyFactory {
 
             case THREAD_SYNC:
                 mStrategy = new ThreadSync();
+                break;
+
+            case REVERSAL_STRING:
+                mStrategy = new ReversalString();
                 break;
         }
         return mStrategy;

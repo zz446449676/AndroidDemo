@@ -10,7 +10,7 @@ public class Algorithm {
     // 测试算法入口
     @Test
     public void testMain() throws InterruptedException {
-        Strategy strategy = StrategyFactory.getStrategy(StrategyFactory.THREAD_SYNC);
+        Strategy strategy = StrategyFactory.getStrategy(StrategyFactory.QUICK_SORT);
         if (strategy != null) {
             strategy.run();
         }

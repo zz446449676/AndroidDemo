@@ -1,5 +1,7 @@
 package com.android.testdemo.function.strategy;
 
+import com.android.testdemo.function.strategy.sort.QuickSort;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 

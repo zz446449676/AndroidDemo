@@ -1,4 +1,6 @@
-package com.android.testdemo.function.strategy;
+package com.android.testdemo.function.strategy.sort;
+
+import com.android.testdemo.function.strategy.Strategy;
 
 import java.util.Arrays;
 
@@ -10,7 +12,7 @@ import java.util.Arrays;
  *  具体来说，插入排序所有的操作都基于一个这样的前提：当前元素前面的序列是有序的。基于这个前提，从后往前去寻找当前元素在前面那个序列里的正确位置。
  *  最好情况O(n) , 平均和最坏情况都为 O(n^2)
  */
-public class InsertSort implements Strategy{
+public class InsertSort implements Strategy {
     @Override
     public void run() {
         // 初始化数组

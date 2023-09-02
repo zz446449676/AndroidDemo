@@ -1,4 +1,6 @@
-package com.android.testdemo.function.strategy;
+package com.android.testdemo.function.strategy.sort;
+
+import com.android.testdemo.function.strategy.Strategy;
 
 import java.util.Arrays;
 
@@ -10,7 +12,7 @@ import java.util.Arrays;
  * 即：（需要记录下当前范围内最小元素的索引下标，然后根据下标把最小值元素和当前范围内头部元素位置进行交换）
  * 然后缩小排序范围，继续重复以上操作，直至数组完全有序为止。所有情况均为 O(n^2)
  */
-public class SelectSort implements Strategy{
+public class SelectSort implements Strategy {
     @Override
     public void run() {
         // 初始化数组
