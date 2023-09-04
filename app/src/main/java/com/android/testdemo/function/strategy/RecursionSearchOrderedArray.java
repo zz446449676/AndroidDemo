@@ -1,7 +1,7 @@
 package com.android.testdemo.function.strategy;
 
 /**
- * 递归遍历查找某一个有序数组,找到则返回数组下标，没找到则返回 -1；
+ * 二分查找，递归遍历查找某一个有序数组,找到则返回数组下标，没找到则返回 -1；
  */
 public class RecursionSearchOrderedArray implements Strategy {
 

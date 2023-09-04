@@ -44,6 +44,15 @@ public class StrategyFactory {
     // 字符串反转
     public static final int REVERSAL_STRING = 6;
 
+    // 寻找二叉树最近公共祖先
+    public static final int LOWEST_COMMON_ANCESTOR = 11;
+
+    // 接雨水问题
+    public static final int CATCH_RAIN_WATER = 12;
+
+    // K 个一组翻转链表
+    public static final int REVERSE_K_GROUP_LINK_LIST = 13;
+
     public static Strategy getStrategy(int strategy) {
         Strategy mStrategy = null;
         switch (strategy) {
@@ -89,6 +98,18 @@ public class StrategyFactory {
 
             case REVERSAL_STRING:
                 mStrategy = new ReversalString();
+                break;
+
+            case LOWEST_COMMON_ANCESTOR:
+                mStrategy = new LowestCommonAncestor();
+                break;
+
+            case CATCH_RAIN_WATER:
+                mStrategy = new CatchRainWater();
+                break;
+
+            case REVERSE_K_GROUP_LINK_LIST:
+                mStrategy = new ReverseKGroupLinkList();
                 break;
         }
         return mStrategy;
