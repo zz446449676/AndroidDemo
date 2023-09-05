@@ -10,7 +10,7 @@ public class Algorithm {
     // 测试算法入口
     @Test
     public void testMain() throws InterruptedException {
-        Strategy strategy = StrategyFactory.getStrategy(StrategyFactory.REVERSE_K_GROUP_LINK_LIST);
+        Strategy strategy = StrategyFactory.getStrategy(StrategyFactory.VALID_BRACKET);
         if (strategy != null) {
             strategy.run();
         }

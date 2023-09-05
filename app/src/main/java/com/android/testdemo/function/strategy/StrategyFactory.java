@@ -53,6 +53,12 @@ public class StrategyFactory {
     // K 个一组翻转链表
     public static final int REVERSE_K_GROUP_LINK_LIST = 13;
 
+    // 求柱状图中的最大矩形
+    public static final int LARGEST_RECTANGLE_AREA = 14;
+
+    // 括号匹配问题
+    public static final int VALID_BRACKET = 15;
+
     public static Strategy getStrategy(int strategy) {
         Strategy mStrategy = null;
         switch (strategy) {
@@ -110,6 +116,14 @@ public class StrategyFactory {
 
             case REVERSE_K_GROUP_LINK_LIST:
                 mStrategy = new ReverseKGroupLinkList();
+                break;
+
+            case LARGEST_RECTANGLE_AREA:
+                mStrategy = new LargestRectangleArea();
+                break;
+
+            case VALID_BRACKET:
+                mStrategy = new ValidBracket();
                 break;
         }
         return mStrategy;
