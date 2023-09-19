@@ -35,7 +35,7 @@ public class QuickSort implements Strategy {
         System.out.println("最终 QuickSort 排序后的数组为：" + Arrays.toString(quickSort(normalArr, 0, normalArr.length - 1)));
     }
 
-    public int[] quickSort(int[] arr, int star, int end) {
+    public static int[] quickSort(int[] arr, int star, int end) {
         if (star > end) return arr;
         int left = star;
         int right = end;

@@ -1,5 +1,10 @@
 package com.android.testdemo.function.strategy;
 
+import com.android.testdemo.function.strategy.backTrace.Combine;
+import com.android.testdemo.function.strategy.backTrace.CombineToSum;
+import com.android.testdemo.function.strategy.backTrace.Permute;
+import com.android.testdemo.function.strategy.backTrace.RepeatCombineToSum;
+import com.android.testdemo.function.strategy.backTrace.SubSet;
 import com.android.testdemo.function.threadDemo.ThreadSync;
 import com.android.testdemo.function.strategy.sort.BubbleSort;
 import com.android.testdemo.function.strategy.sort.InsertSort;
@@ -58,6 +63,21 @@ public class StrategyFactory {
 
     // 括号匹配问题
     public static final int VALID_BRACKET = 15;
+
+    // 回溯全排列子集
+    public static final int BACK_TRACE_SUBSET = 16;
+
+    // 回溯全排列组合
+    public static final int BACK_TRACE_COMBINE = 17;
+
+    // 回溯全排列问题
+    public static final int BACK_TRACE_PERMUTE = 18;
+
+    // 回溯算法 从数组中找出和为 Target 的组合或者子集
+    public static final int BACK_TRACE_COMBINE_TO_SUM = 19;
+
+    // 回溯算法，可重复使用数组内的数，找出和为Target的组合或者子集
+    public static final int BACK_TRACE_REPEAT_COMBINE_TO_SUM = 20;
 
     public static Strategy getStrategy(int strategy) {
         Strategy mStrategy = null;
@@ -124,6 +144,26 @@ public class StrategyFactory {
 
             case VALID_BRACKET:
                 mStrategy = new ValidBracket();
+                break;
+
+            case BACK_TRACE_SUBSET:
+                mStrategy = new SubSet();
+                break;
+
+            case BACK_TRACE_COMBINE:
+                mStrategy = new Combine();
+                break;
+
+            case BACK_TRACE_PERMUTE:
+                mStrategy = new Permute();
+                break;
+
+            case BACK_TRACE_COMBINE_TO_SUM:
+                mStrategy = new CombineToSum();
+                break;
+
+            case BACK_TRACE_REPEAT_COMBINE_TO_SUM:
+                mStrategy = new RepeatCombineToSum();
                 break;
         }
         return mStrategy;

@@ -18,8 +18,7 @@ public class ThreeSum implements Strategy {
         int[] arr = new int[] {-1, 0, 1, 2, -1, -4};
 
         // 先使用快排对数组进行排序
-        QuickSort quickSort = new QuickSort(arr);
-        arr = quickSort.quickSort(arr, 0, arr.length - 1);
+        arr = QuickSort.quickSort(arr, 0, arr.length - 1);
         System.out.println("排序后的数组为 ： " + Arrays.toString(arr));
 
         System.out.println("符合 target = " + target + " 的三元组为 ： ");
