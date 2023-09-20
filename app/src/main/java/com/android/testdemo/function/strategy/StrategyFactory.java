@@ -2,6 +2,7 @@ package com.android.testdemo.function.strategy;
 
 import com.android.testdemo.function.strategy.backTrace.Combine;
 import com.android.testdemo.function.strategy.backTrace.CombineToSum;
+import com.android.testdemo.function.strategy.backTrace.GenerateParenthesis;
 import com.android.testdemo.function.strategy.backTrace.Permute;
 import com.android.testdemo.function.strategy.backTrace.RepeatCombineToSum;
 import com.android.testdemo.function.strategy.backTrace.SubSet;
@@ -78,6 +79,9 @@ public class StrategyFactory {
 
     // 回溯算法，可重复使用数组内的数，找出和为Target的组合或者子集
     public static final int BACK_TRACE_REPEAT_COMBINE_TO_SUM = 20;
+
+    // 回溯算法生成括号
+    public static final int BACK_TRACE_GENERATE_PARENTHESIS = 21;
 
     public static Strategy getStrategy(int strategy) {
         Strategy mStrategy = null;
@@ -164,6 +168,10 @@ public class StrategyFactory {
 
             case BACK_TRACE_REPEAT_COMBINE_TO_SUM:
                 mStrategy = new RepeatCombineToSum();
+                break;
+
+            case BACK_TRACE_GENERATE_PARENTHESIS:
+                mStrategy = new GenerateParenthesis();
                 break;
         }
         return mStrategy;

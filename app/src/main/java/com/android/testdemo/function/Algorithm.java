@@ -10,7 +10,7 @@ public class Algorithm {
     // 测试算法入口
     @Test
     public void testMain() throws InterruptedException {
-        Strategy strategy = StrategyFactory.getStrategy(StrategyFactory.BACK_TRACE_REPEAT_COMBINE_TO_SUM);
+        Strategy strategy = StrategyFactory.getStrategy(StrategyFactory.BACK_TRACE_GENERATE_PARENTHESIS);
         if (strategy != null) {
             strategy.run();
         }
