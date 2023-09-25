@@ -6,6 +6,11 @@ import com.android.testdemo.function.strategy.backTrace.GenerateParenthesis;
 import com.android.testdemo.function.strategy.backTrace.Permute;
 import com.android.testdemo.function.strategy.backTrace.RepeatCombineToSum;
 import com.android.testdemo.function.strategy.backTrace.SubSet;
+import com.android.testdemo.function.strategy.backTrace.WordSplit;
+import com.android.testdemo.function.strategy.dynamicProgram.CoinChange;
+import com.android.testdemo.function.strategy.dynamicProgram.Knapsack;
+import com.android.testdemo.function.strategy.dynamicProgram.LongestIncreasingSubsequence;
+import com.android.testdemo.function.strategy.dynamicProgram.MaxSubArraySum;
 import com.android.testdemo.function.threadDemo.ThreadSync;
 import com.android.testdemo.function.strategy.sort.BubbleSort;
 import com.android.testdemo.function.strategy.sort.InsertSort;
@@ -82,6 +87,21 @@ public class StrategyFactory {
 
     // 回溯算法生成括号
     public static final int BACK_TRACE_GENERATE_PARENTHESIS = 21;
+
+    // 回溯单词拆分问题
+    public static final int BACK_WORD_SPLIT = 22;
+
+    // 凑零钱问题
+    public static final int DYNAMIC_COIN_CHANGE = 23;
+
+    // 最长递增子序列
+    public static final int DYNAMIC_LONGEST_INCREASING_SUBSEQUENCE = 24;
+
+    // 求最大子序列之和
+    public static final int DYNAMIC_MAX_SUB_ARRAY_SUM = 25;
+
+    // 背包问题
+    public static final int DYNAMIC_KNAPSACK = 26;
 
     public static Strategy getStrategy(int strategy) {
         Strategy mStrategy = null;
@@ -172,6 +192,26 @@ public class StrategyFactory {
 
             case BACK_TRACE_GENERATE_PARENTHESIS:
                 mStrategy = new GenerateParenthesis();
+                break;
+
+            case DYNAMIC_COIN_CHANGE:
+                mStrategy = new CoinChange();
+                break;
+
+            case DYNAMIC_LONGEST_INCREASING_SUBSEQUENCE:
+                mStrategy = new LongestIncreasingSubsequence();
+                break;
+
+            case BACK_WORD_SPLIT:
+                mStrategy = new WordSplit();
+                break;
+
+            case DYNAMIC_MAX_SUB_ARRAY_SUM:
+                mStrategy = new MaxSubArraySum();
+                break;
+
+            case DYNAMIC_KNAPSACK:
+                mStrategy = new Knapsack();
                 break;
         }
         return mStrategy;
