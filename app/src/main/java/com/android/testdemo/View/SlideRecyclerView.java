@@ -124,6 +124,7 @@ public class SlideRecyclerView extends RecyclerView {
     @Override
     public boolean onTouchEvent(MotionEvent e) {
         float x = e.getX();
+        float y = e.getY();
         switch (e.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 break;
@@ -148,6 +149,14 @@ public class SlideRecyclerView extends RecyclerView {
                         mLastX = x;
                     }
                     return true;
+                }
+                // 存在偶现的情况，在拦截阶段没能及时收回删除按钮，需要在后续的竖直方向滑动时进行收回
+                if (mPreItemView != null && mPreItemView.getScrollX() != 0 &&
+                        Math.abs(x - mFirstX) < Math.abs(y - mFirstY) && mPreScroller.isFinished()) {
+                    int dx = mPreItemView.getScrollX() >= mMessageDeleteWidth ? -mMessageDeleteWidth : -mPreItemView.getScrollX();
+                    // 执行收回滑动动画
+                    mPreScroller.startScroll(mPreItemView.getScrollX(), 0, dx, 0, 200);
+                    invalidate();
                 }
                 break;
 
