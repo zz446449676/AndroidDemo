@@ -17,18 +17,21 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.testdemo.View.SlideRecyclerView;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 public class RecycleViewDemo extends AppCompatActivity {
     public LinearLayout delete_btn;
+    static SlideRecyclerView mRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycle_view_demo);
-        RecyclerView mRecyclerView = findViewById(R.id.recyclerView);
+        mRecyclerView = findViewById(R.id.recyclerView);
         ConstraintLayout foot_layout = findViewById(R.id.foot_layout);
         delete_btn = findViewById(R.id.delete_btn);
         Button btn_edit = findViewById(R.id.btn_edit);
@@ -157,6 +160,15 @@ public class RecycleViewDemo extends AppCompatActivity {
                 itemViewHolder.checkbox.setVisibility(isEditMode ? View.VISIBLE : View.GONE);
                 itemViewHolder.checkbox.setSelected(deleteIndexMap.get(position) != null);
 
+                itemViewHolder.message_delete.setOnClickListener(view ->{
+                    Log.d("zhang", "message_delete onClick position ： " + position);
+
+                    dataList.remove(position);
+                    this.notifyDataSetChanged();
+                    mRecyclerView.closeMenu();
+                    Toast.makeText(Application.getInstance(),"删除成功！", Toast.LENGTH_SHORT).show();
+                });
+
                 itemViewHolder.root_layout.setOnClickListener(view ->{
                     Log.d("zhang", "RecycleView OnClick position : " + position);
                     if (onItemClickListener != null) {
@@ -176,6 +188,7 @@ public class RecycleViewDemo extends AppCompatActivity {
         View checkbox;
         TextView title, content;
         ConstraintLayout root_layout;
+        LinearLayout message_delete;
 
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -183,6 +196,7 @@ public class RecycleViewDemo extends AppCompatActivity {
             title = itemView.findViewById(R.id.title);
             content = itemView.findViewById(R.id.content);
             root_layout = itemView.findViewById(R.id.root_layout);
+            message_delete = itemView.findViewById(R.id.message_delete);
         }
     }
 

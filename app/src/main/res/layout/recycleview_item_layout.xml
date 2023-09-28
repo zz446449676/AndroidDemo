@@ -60,5 +60,23 @@
         android:background="#bcbcbc"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
+    <LinearLayout
+        android:layout_height="0dp"
+        android:layout_width="84dp"
+        android:id="@+id/message_delete"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#FFE6212A"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/trash"
+            app:tint="#ffffff"/>
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
