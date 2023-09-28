@@ -26,6 +26,8 @@ public class SlideRecyclerView extends RecyclerView {
 
     private static final int SNAP_VELOCITY = 300;   // 最小滑动速度
 
+    private boolean isAllowSlide = true; // 当处于多选删除状态下，不允许左滑删除
+
     private final int mTouchSlop; // 认为是滑动的最小距离（一般由系统提供）
 
     private float mFirstX, mFirstY; // 首次触碰范围
@@ -128,7 +130,7 @@ public class SlideRecyclerView extends RecyclerView {
 
             case MotionEvent.ACTION_MOVE:
                 // 进入横向滑动，在横向滑动后直接return true 消耗此事件，禁止竖直滑动
-                if (isSideSlip) {
+                if (isSideSlip && isAllowSlide) {
                     if (mItemView != null) {
                         // 随手指滑动
                         float dx = mLastX - x;
@@ -225,6 +227,22 @@ public class SlideRecyclerView extends RecyclerView {
         }
         if (mPreItemView != null && mPreItemView.getScrollX() !=0) {
             mPreItemView.scrollTo(0, 0);
+        }
+    }
+
+    /**
+     * 设置是否可以横向滑动
+     * 站内信在某些场景下不可以横向滑动展示出删除按钮，例如：处于多选状态时
+     */
+    public void setIsAllowSlide(boolean allow) {
+        this.isAllowSlide = allow;
+        if (mItemView != null) {
+            mItemView.scrollTo(0, 0);
+            mItemView = null;
+        }
+        if (mPreItemView != null) {
+            mPreItemView.scrollTo(0, 0);
+            mPreItemView = null;
         }
     }
 }

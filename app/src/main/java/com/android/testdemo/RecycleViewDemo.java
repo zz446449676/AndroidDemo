@@ -65,6 +65,8 @@ public class RecycleViewDemo extends AppCompatActivity {
                 deleteIndexMap.clear();
             }
             mAdapter.setEditMode(!editMode);
+            mRecyclerView.setIsAllowSlide(editMode);
+            mRecyclerView.closeMenu();
 
             // 设置按钮状态
             foot_layout.setVisibility(editMode ? View.GONE : View.VISIBLE);
@@ -79,6 +81,7 @@ public class RecycleViewDemo extends AppCompatActivity {
         delete_btn.setOnClickListener(view ->{
             // 设置删除数据并通知改变
             mAdapter.setEditMode(false);
+            mRecyclerView.setIsAllowSlide(true);
 
             // 数据删除操作
             for (Integer key : mAdapter.getDeleteIndexMap().keySet()) {
