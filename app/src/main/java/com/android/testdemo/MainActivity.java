@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.android.testdemo.Util.PermissionUtil;
+import com.android.testdemo.advancedUi.activity.UiMainActivity;
 
 public class MainActivity extends AppCompatActivity {
     public static final int CAMERA_PERMISSION = 1000;
@@ -29,8 +30,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button recycle_btn = findViewById(R.id.recycleyView);
-
         Button camera = findViewById(R.id.camera);
+        Button advanced_ui = findViewById(R.id.advanced_ui);
+
+        // 相机功能
         camera.setOnClickListener(view -> {
             String[] permission = new String[] {Manifest.permission.CAMERA};
             if (PermissionUtil.hasPermission(this, permission)) {
@@ -47,8 +50,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // recyclerView 功能多选删除，左滑删除等等
         recycle_btn.setOnClickListener(view -> {
             Intent intent = new Intent(this, RecycleViewDemo.class);
+            startActivity(intent);
+        });
+
+        // 高级 UI 功能
+        advanced_ui.setOnClickListener(view -> {
+            Intent intent = new Intent(this, UiMainActivity.class);
             startActivity(intent);
         });
     }

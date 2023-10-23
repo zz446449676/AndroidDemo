@@ -26,6 +26,14 @@
         android:theme="@style/Theme.TestDemo"
         tools:targetApi="31">
         <activity
+            android:name=".advancedUi.activity.ChinaSVGActivity"
+            android:exported="false" />
+        <activity
+            android:name=".advancedUi.activity.UiMainActivity"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme" />
+        <activity
             android:name=".RecycleViewDemo"
             android:exported="false"
             android:label="@string/title_activity_recycle_view_demo" />
@@ -33,7 +41,7 @@
             android:name=".CameraActivity"
             android:exported="false"
             android:launchMode="singleTask"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

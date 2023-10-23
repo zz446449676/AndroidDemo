@@ -10,7 +10,7 @@ public class ThreadSync implements Strategy {
     Thread thread1, thread2, thread3;
 
     // 创建一个共享的唤醒对象
-    private static final Object lock = new Object();
+    private static final Object lock = new byte[0];
     @Override
     public void run() {
         try {
