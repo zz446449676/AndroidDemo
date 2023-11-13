@@ -18,15 +18,15 @@ android {
 
     signingConfigs {
         debugConfig {
-            storeFile file('zhang.keystore')
+            storeFile file('wingontravel.keystore')
             storePassword "wingon"
-            keyAlias "wingon"
+            keyAlias "wingontravel"
             keyPassword "wingon"
         }
         releaseConfig {
-            storeFile file('zhang.keystore')
+            storeFile file('wingontravel.keystore')
             storePassword "wingon"
-            keyAlias "wingon"
+            keyAlias "wingontravel"
             keyPassword "wingon"
         }
     }
